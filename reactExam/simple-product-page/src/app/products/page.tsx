@@ -1,15 +1,25 @@
+import Link from "next/link";
 import { fetchProducts } from "../../api/useApi";
 import ProductList from "../../components/ProductListComponent";
 
 export default async function Page() {
-  const products = await fetchProducts();
+  let products = [];
+  try {
+    products = await fetchProducts();
+  } catch (error) {
+    console.error("error: ", error);
+  }
+
   return (
-    <main>
+    <>
       <header>
         <h1>Product List Page</h1>
+        <Link href="/">{"<-"} Back to home</Link>
       </header>
-      <ProductList products={products} />
+      <main>
+        <ProductList products={products} />
+      </main>
       <footer>code challenge</footer>
-    </main>
+    </>
   );
 }
