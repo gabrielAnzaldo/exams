@@ -1,7 +1,8 @@
-export const fetchProducts = () => {
-  return fetch("https://fakestoreapi.com/products")
+export const fecher = (url: string) => {
+  return fetch(url)
     .then((res) => res.json())
-    .then((json) => {
-      return json;
+    .then((json) => json)
+    .catch((error) => {
+      console.log("error: ", error);
     });
 };
