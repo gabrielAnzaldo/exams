@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <section>
-        <Link href="/products">Go to products page link here:</Link>
+        <Link href="/products">Go to products page</Link>
       </section>
     </main>
   );
