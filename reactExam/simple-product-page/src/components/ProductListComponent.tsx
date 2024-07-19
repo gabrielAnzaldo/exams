@@ -1,4 +1,5 @@
 import React from "react";
+import ProductCard from "./ProductCard";
 import { Product } from "../types";
 
 interface ProductListProps {
@@ -8,10 +9,8 @@ interface ProductListProps {
 const ProductList: React.FC<ProductListProps> = ({ products }) => {
   return (
     <section>
-      {products?.map?.((item: Product, index: number) => (
-        <h2 key={item.id}>
-          {index + 1} - {item.title}
-        </h2>
+      {products?.map?.((item: Product) => (
+        <ProductCard key={item.id} {...item} />
       ))}
     </section>
   );
