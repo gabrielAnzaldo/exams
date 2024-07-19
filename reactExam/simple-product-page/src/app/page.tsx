@@ -1,10 +1,12 @@
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <section>Go to products page link here:</section>
+      <section>
+        <Link href="/products">Go to products page link here:</Link>
+      </section>
     </main>
   );
 }
