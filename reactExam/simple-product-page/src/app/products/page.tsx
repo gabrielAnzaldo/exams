@@ -1,17 +1,11 @@
 import { fetchProducts } from "../../api/useApi";
-import { Product } from "../../types";
+import ProductList from "../../components/ProductListComponent";
 
 export default async function Page() {
   const products = await fetchProducts();
   return (
     <main>
-      <section>
-        {products?.map?.((item: Product, index: number) => (
-          <h2 key={item.id}>
-            {index + 1} - {item.title}
-          </h2>
-        ))}
-      </section>
+      <ProductList products={products} />
     </main>
   );
 }
