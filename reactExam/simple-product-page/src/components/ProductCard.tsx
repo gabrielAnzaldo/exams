@@ -1,10 +1,19 @@
+import Image from "next/image";
 import { Product } from "../types";
+import styles from "./product.module.css";
 
-const ProductCard: React.FC<Product> = ({ title, price }) => {
+const ProductCard: React.FC<Product> = ({ title, price, image }) => {
   return (
-    <h2>
-      {title} - {price}
-    </h2>
+    <article className={styles.product}>
+      <Image src={image} alt="Image description" width="240" height={"358"} />
+      <span>{title}</span>
+      <span>
+        <b>
+          {price}
+          {" USD"}
+        </b>
+      </span>
+    </article>
   );
 };
 
